@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak | PT SUMBER PILAR ARMADA</title>
+  <meta name="description" content="PT SUMBER PILAR ARMADA, Bengkel Mobil dan Sparepart Mobil di Pasar Palmerah, Jakarta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header id="silfa_header">
+    <div class="silfa_wadah silfa_bar">
+      <a href="index.html" class="silfa_logo">
+        PT SUMBER PILAR ARMADA
+        <small>Bengkel Mobil dan Sparepart Mobil</small>
+      </a>
+
+      <input type="checkbox" id="silfa_menu_cek" hidden>
+      <label for="silfa_menu_cek" id="silfa_tombol_menu">Menu</label>
+
+      <nav id="silfa_nav">
+        <a href="index.html" class="silfa_link">Beranda</a>
+        <a href="tentang.html" class="silfa_link">Tentang</a>
+        <a href="layanan.html" class="silfa_link">Layanan</a>
+        <a href="harga.html" class="silfa_link">Harga</a>
+        <a href="galeri.html" class="silfa_link">Galeri</a>
+        <a href="tim.html" class="silfa_link">Tim</a>
+        <a href="kontak.html" class="silfa_link silfa_aktif">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="silfa_judul_halaman">
+      <div class="silfa_wadah">
+        <h1>Kontak</h1>
+        <p>Ceritakan keluhan mobilmu, kami balas di jam kerja.</p>
+      </div>
+    </section>
+
+    <section class="silfa_bagian">
+      <div class="silfa_wadah silfa_kolom2">
+
+        <form id="silfa_form" method="get" action="https://wa.me/6287740139353" target="_blank">
+          <h2>Kirim Pesan</h2>
+
+          <label for="silfa_nama">Nama</label>
+          <input id="silfa_nama" type="text" autocomplete="name" required>
+
+          <label for="silfa_email">Email</label>
+          <input id="silfa_email" type="email" autocomplete="email" required>
+
+          <label for="silfa_hp">Nomor HP</label>
+          <input id="silfa_hp" type="tel" autocomplete="tel" pattern="[0-9+\-\s]{8,16}" title="Masukkan nomor HP yang valid" required>
+
+          <label for="silfa_kendaraan">Tipe mobil</label>
+          <select id="silfa_kendaraan" required>
+            <option value="">Pilih tipe mobil</option>
+            <option>Sedan</option>
+            <option>Hatchback</option>
+            <option>MPV</option>
+            <option>SUV / Jeep</option>
+            <option>Pickup / Mobil niaga</option>
+            <option>Lainnya</option>
+          </select>
+
+          <label for="silfa_pesan">Keluhan atau pesan</label>
+          <textarea id="silfa_pesan" name="text" rows="5" placeholder="Tulis nama, tipe mobil, dan keluhan Anda di sini" required></textarea>
+
+          <button type="submit" class="silfa_tombol">Kirim Pesan</button>
+        </form>
+
+        <div>
+          <h2>Alamat dan Jam Buka</h2>
+          <p>Pasar Palmerah, Lt.3 blok B no.19</p>
+          <p>Senin - Minggu 09.00 - 17.00</p>
+          <iframe title="Peta lokasi bengkel" class="silfa_peta" loading="lazy" src="https://www.google.com/maps?q=Pasar+Palmerah+Jakarta&output=embed"></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="silfa_footer">
+    <div class="silfa_wadah silfa_kolom">
+      <div class="silfa_hak">
+        <p><strong>© 2026 PT Sumber Pilar Armada</strong></p>
+        <p>Pasar Palmerah, Lt.3 blok B No.19, Jakarta Barat</p>
+        <p>0877-4013-9353</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
