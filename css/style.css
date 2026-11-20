@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap');
+
+:root {
+  --merah: #e53935;
+  --merah-gelap: #c62828;
+  --hitam: #171717;
+  --hitam-2: #222222;
+  --abu: #f1f1f1;
+  --abu-2: #dedede;
+  --putih: #ffffff;
+  --teks: #292929;
+  --teks-redup: #686868;
+  --bayangan: 0 10px 30px rgba(0, 0, 0, .09);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--putih);
+  color: var(--teks);
+  font-family: 'Barlow', Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea { font: inherit; }
+
+h1, h2, h3 {
+  font-family: 'Barlow Condensed', Impact, sans-serif;
+  line-height: 1.15;
+  margin-top: 0;
+  color: var(--hitam);
+}
+h1 {
+  color: var(--putih);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  max-width: 680px;
+  margin-bottom: 18px;
+}
+h1::first-letter { color: var(--merah); }
+h2 { font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 22px; }
+h3 { font-size: 1.45rem; margin-bottom: 9px; }
+
+.silfa_wadah { width: min(1120px, 90%); margin: 0 auto; }
+
+.silfa_sembunyi { display: none !important; }
+
+#silfa_header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--hitam);
+  color: var(--putih);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, .18);
+}
+
+.silfa_bar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.silfa_logo {
+  color: var(--putih);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: .3px;
+}
+.silfa_logo::first-letter { color: var(--merah); }
+.silfa_logo small {
+  display: block;
+  margin-top: 5px;
+  color: #c7c7c7;
+  font: 500 .72rem 'Barlow', sans-serif;
+  letter-spacing: .5px;
+}
+
+#silfa_nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 25px);
+}
+
+.silfa_link {
+  color: #e7e7e7;
+  font-size: .91rem;
+  font-weight: 600;
+  padding: 28px 0 24px;
+  border-bottom: 3px solid transparent;
+}
+.silfa_link:hover,
+.silfa_link.silfa_aktif {
+  color: var(--putih);
+  border-color: var(--merah);
+}
+
+#silfa_menu_cek { display: none; }
+
+#silfa_tombol_menu {
+  display: none;
+  background: var(--merah);
+  color: var(--putih);
+  border: 0;
+  border-radius: 4px;
+  padding: 9px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#silfa_hero {
+  color: var(--putih);
+  min-height: 510px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .94), rgba(0, 0, 0, .72) 55%, rgba(0, 0, 0, .35)),
+    url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=85') center / cover;
+  border-bottom: 5px solid var(--merah);
+}
+#silfa_hero p { max-width: 620px; color: #e1e1e1; font-size: 1.05rem; }
+
+.silfa_hero_isi {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 55px;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.silfa_aksi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.silfa_judul_halaman {
+  padding: 66px 0;
+  color: var(--putih);
+  background: linear-gradient(110deg, #111 0%, #292929 70%, #3a3a3a 100%);
+  border-bottom: 5px solid var(--merah);
+}
+.silfa_judul_halaman h1 { font-size: clamp(2.5rem, 5vw, 3.7rem); margin-bottom: 8px; }
+.silfa_judul_halaman p { color: #d0d0d0; margin: 0; }
+
+.silfa_tombol {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--merah);
+  border-radius: 4px;
+  padding: 11px 19px;
+  background: var(--merah);
+  color: var(--putih);
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.silfa_tombol:hover {
+  background: var(--merah-gelap);
+  border-color: var(--merah-gelap);
+  transform: translateY(-2px);
+}
+.silfa_tombol_garis { background: transparent; color: var(--putih); border-color: var(--putih); }
+.silfa_tombol_garis:hover { background: var(--putih); color: var(--hitam); border-color: var(--putih); }
+
+.silfa_bagian { padding: 76px 0; }
+.silfa_bagian > .silfa_wadah > h2 { margin-bottom: 28px; }
+.silfa_latar { background: var(--abu); }
+
+.silfa_grid2, .silfa_kolom2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.silfa_grid3, .silfa_kolom3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.silfa_grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+
+.silfa_kartu {
+  background: var(--putih);
+  border: 1px solid #e5e5e5;
+  border-bottom: 4px solid var(--merah);
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: var(--bayangan);
+}
+.silfa_kartu p,
+.silfa_bagian p { color: var(--teks-redup); }
+
+.silfa_tautan { display: block; transition: .2s ease; }
+.silfa_tautan:hover { transform: translateY(-5px); border-bottom-color: var(--hitam); }
+
+.silfa_cta {
+  margin-top: 35px;
+  padding: 30px;
+  background: var(--hitam);
+  color: var(--putih);
+  border-left: 5px solid var(--merah);
+  border-radius: 5px;
+}
+.silfa_cta p,
+.silfa_cta h2 { color: var(--putih); }
+
+.silfa_daftar { padding-left: 22px; color: var(--teks-redup); }
+.silfa_daftar li { padding: 5px 0; }
+
+.silfa_angka {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+.silfa_angka div {
+  background: var(--hitam);
+  color: var(--putih);
+  padding: 15px;
+  border-bottom: 3px solid var(--merah);
+}
+.silfa_angka strong,
+.silfa_angka span { display: block; }
+.silfa_angka strong { font: 700 1.7rem 'Barlow Condensed', sans-serif; color: var(--merah); }
+.silfa_angka span { font-size: .8rem; color: #ddd; }
+
+.silfa_gulir { overflow-x: auto; }
+
+.silfa_tabel {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--putih);
+  box-shadow: var(--bayangan);
+}
+.silfa_tabel th { background: var(--hitam); color: var(--putih); text-align: left; }
+.silfa_tabel th,
+.silfa_tabel td { padding: 14px 17px; border-bottom: 1px solid #e5e5e5; }
+.silfa_tabel tbody tr:nth-child(even) { background: var(--abu); }
+.silfa_tabel tbody tr:hover { background: #ffe9e8; }
+
+.silfa_filter { display: flex; gap: 10px; margin-bottom: 18px; }
+.silfa_filter_btn {
+  padding: 9px 18px;
+  border: 1px solid #ccc;
+  background: var(--putih);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.silfa_filter_btn:hover,
+.silfa_filter_btn.silfa_aktif {
+  background: var(--merah);
+  color: var(--putih);
+  border-color: var(--merah);
+}
+
+.silfa_kalkulator,
+#silfa_kalkulator,
+#silfa_form {
+  background: var(--abu);
+  padding: 28px;
+  border-radius: 6px;
+  border-top: 4px solid var(--merah);
+  box-shadow: var(--bayangan);
+}
+#silfa_kalkulator { margin-top: 30px; max-width: 680px; }
+
+#silfa_kalkulator label,
+#silfa_form label { display: block; font-weight: 700; margin: 13px 0 5px; }
+
+#silfa_kalkulator select,
+#silfa_form input,
+#silfa_form select,
+#silfa_form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px;
+  background: var(--putih);
+  color: #222;
+}
+#silfa_form textarea { resize: vertical; }
+
+#silfa_kalkulator fieldset { border: 1px solid #ccc; border-radius: 4px; margin: 18px 0; padding: 14px; }
+
+#silfa_pilihan label {
+  display: block;
+  font-weight: 500;
+  margin: 8px 0;
+}
+#silfa_pilihan input { width: auto; }
+
+.silfa_total {
+  background: var(--hitam);
+  color: var(--putih) !important;
+  padding: 13px 16px;
+  border-left: 4px solid var(--merah);
+}
+.silfa_total strong { color: #ff7773; }
+
+.silfa_error { color: var(--merah-gelap); display: block; font-size: .82rem; }
+#silfa_sukses { color: #237a3b; font-weight: 700; }
+
+.silfa_peta { width: 100%; min-height: 300px; border: 0; border-radius: 5px; margin-top: 18px; }
+
+.silfa_foto {
+  margin: 0;
+  background: var(--putih);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--bayangan);
+  cursor: pointer;
+}
+.silfa_foto figcaption { padding: 13px 16px; font-weight: 700; }
+
+.silfa_gambar {
+  height: 200px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--putih);
+  font-weight: 700;
+  background: linear-gradient(135deg, #222, #555);
+  border-bottom: 4px solid var(--merah);
+}
+.silfa_f2 .silfa_gambar { background: linear-gradient(135deg, #333, #777); }
+.silfa_f3 .silfa_gambar { background: linear-gradient(135deg, #111, #9a3331); }
+
+.silfa_gambar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;             
+  object-position: center 85%;   
+  transform: scale(1.2);
+  transform-origin: center bottom;
+  transition: transform .3s ease;
+}
+
+.silfa_f1 .silfa_gambar img,
+.silfa_f2 .silfa_gambar img { transform: scale(1.4); }
+
+.silfa_slide {
+  display: none;
+  background: var(--putih);
+  padding: 30px;
+  border-left: 5px solid var(--merah);
+  box-shadow: var(--bayangan);
+  font-size: 1.15rem;
+}
+.silfa_slide.silfa_aktif { display: block; }
+.silfa_slide cite {
+  display: block;
+  margin-top: 15px;
+  color: var(--merah-gelap);
+  font-style: normal;
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+#silfa_footer {
+  background: var(--hitam);
+  color: var(--putih);
+  padding: 48px 0 20px;
+  border-top: 5px solid var(--merah);
+  text-align: center;
+}
+#silfa_footer strong { color: var(--putih); font-size: 1.05rem; }
+#silfa_footer p { color: #c4c4c4; margin: 8px 0; }
+#silfa_footer a { color: #ddd; margin-right: 8px; }
+#silfa_footer a:hover { color: #ff7773; }
+
+#silfa_footer .silfa_kolom3 {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+#silfa_footer .silfa_hak {
+  text-align: center;
+  border-top: 1px solid #3a3a3a;
+  padding-top: 18px;
+  margin-top: 28px;
+  font-size: .85rem;
+}
+
+#silfa_atas {
+  display: block;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  border: 0;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: var(--putih);
+  background: var(--merah);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--bayangan);
+}
+#silfa_atas.silfa_tampil { display: block; }
+
+@media (max-width: 900px) {
+  .silfa_grid4 { grid-template-columns: repeat(2, 1fr); }
+  .silfa_hero_isi { gap: 25px; }
+  #silfa_nav { gap: 12px; }
+  .silfa_link { font-size: .84rem; }
+}
+
+@media (max-width: 700px) {
+  .silfa_bar { min-height: 70px; }
+  #silfa_tombol_menu { display: block; }
+
+  #silfa_nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 12px 5% 20px;
+    background: var(--hitam);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid #444;
+  }
+  #silfa_nav.silfa_buka,
+  #silfa_menu_cek:checked ~ #silfa_nav { display: flex; }
+
+  .silfa_link { padding: 10px 0; border-bottom: 1px solid #333; }
+  .silfa_hero_isi,
+  .silfa_grid2,
+  .silfa_kolom2 { grid-template-columns: 1fr; }
+  .silfa_hero_isi { padding-top: 55px; padding-bottom: 55px; }
+  .silfa_grid3,
+  .silfa_kolom3 { grid-template-columns: 1fr; }
+  .silfa_bagian { padding: 55px 0; }
+  .silfa_angka { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 460px) {
+  .silfa_grid4 { grid-template-columns: 1fr; }
+  .silfa_filter { flex-wrap: wrap; }
+}
+
+#silfa_form input:user-invalid,
+#silfa_form select:user-invalid,
+#silfa_form textarea:user-invalid { border-color: var(--merah); }
